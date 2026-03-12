@@ -72,9 +72,9 @@ const HeroBannerCommon = ({
             />
           </>
         )}
-        {/* Gradient overlay to fade image/video at bottom */}
+        {/* Gradient overlay to fade image/video at bottom; TE-style warm overlay */}
         {!hideGradientOverlay && (
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent from-85% to-white"></div>
+          <div className="via-accent/20 to-accent/40 absolute inset-0 bg-gradient-to-b from-transparent from-60%"></div>
         )}
       </div>
 
@@ -94,7 +94,7 @@ export const Default = ({ params, fields, rendering }: HeroBannerProps) => {
   return (
     <HeroBannerCommon params={params} fields={fields} rendering={rendering}>
       {/* Content Container */}
-      <div className="relative w-full">
+      <div className="relative w-full text-white">
         <div className="container mx-auto px-4">
           <div
             className={`flex min-h-238 w-full py-10 lg:w-1/2 lg:items-center ${reverseLayout ? 'lg:mr-auto' : 'lg:ml-auto'}`}
@@ -104,7 +104,9 @@ export const Default = ({ params, fields, rendering }: HeroBannerProps) => {
                 {/* Title */}
                 <h1 className="text-center text-5xl leading-[110%] font-bold capitalize md:text-7xl md:leading-[130%] lg:text-left xl:text-[80px]">
                   <ContentSdkText field={fields.Title} />
-                  {!hideAccentLine && <AccentLine className="mx-auto !h-5 w-[9ch] lg:mx-0" />}
+                  {!hideAccentLine && (
+                    <AccentLine className="mx-auto !h-5 w-[9ch] !text-white lg:mx-0" />
+                  )}
                 </h1>
 
                 {/* Description */}
@@ -115,12 +117,15 @@ export const Default = ({ params, fields, rendering }: HeroBannerProps) => {
                   />
                 </div>
 
-                {/* CTA Link or Placeholder */}
+                {/* CTA Link or Placeholder - TE style solid orange button */}
                 <div className="mt-6 flex w-full justify-center lg:justify-start">
                   {withPlaceholder ? (
                     <Placeholder name={searchBarPlaceholderKey} rendering={rendering} />
                   ) : (
-                    <Link field={fields.CtaLink} className="arrow-btn" />
+                    <Link
+                      field={fields.CtaLink}
+                      className="main-btn inline-flex w-auto min-w-[12rem] justify-center"
+                    />
                   )}
                 </div>
               </div>
@@ -143,7 +148,7 @@ export const TopContent = ({ params, fields, rendering }: HeroBannerProps) => {
   return (
     <HeroBannerCommon params={params} fields={fields} rendering={rendering}>
       {/* Content Container */}
-      <div className="relative w-full">
+      <div className="relative w-full text-white">
         <div className="container mx-auto flex min-h-238 justify-center px-4">
           <div
             className={`flex flex-col items-center py-10 lg:py-44 ${reverseLayout ? 'justify-end' : 'justify-start'}`}
@@ -152,7 +157,7 @@ export const TopContent = ({ params, fields, rendering }: HeroBannerProps) => {
               {/* Title */}
               <h1 className="text-center text-5xl leading-[110%] font-bold capitalize md:text-7xl md:leading-[130%] xl:text-[80px]">
                 <ContentSdkText field={fields.Title} />
-                {!hideAccentLine && <AccentLine className="mx-auto !h-5 w-[9ch]" />}
+                {!hideAccentLine && <AccentLine className="mx-auto !h-5 w-[9ch] !text-white" />}
               </h1>
 
               {/* Description */}
@@ -160,12 +165,15 @@ export const TopContent = ({ params, fields, rendering }: HeroBannerProps) => {
                 <ContentSdkRichText field={fields.Description} className="text-center" />
               </div>
 
-              {/* CTA Link or Placeholder */}
+              {/* CTA Link or Placeholder - TE style solid orange button */}
               <div className="mt-6 flex w-full justify-center">
                 {withPlaceholder ? (
                   <Placeholder name={searchBarPlaceholderKey} rendering={rendering} />
                 ) : (
-                  <Link field={fields.CtaLink} className="arrow-btn" />
+                  <Link
+                    field={fields.CtaLink}
+                    className="main-btn inline-flex w-auto min-w-[12rem] justify-center"
+                  />
                 )}
               </div>
             </div>

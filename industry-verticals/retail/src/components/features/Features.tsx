@@ -125,9 +125,9 @@ export const ThreeColGridCentered = (props: FeaturesProps) => {
           const image = item.featureImage.jsonValue;
           return (
             <div className="flex flex-col items-center justify-start 2xl:w-80" key={index}>
-              {/* Image */}
+              {/* Image - TE style orange circle */}
               <div className="bg-accent mb-7 flex h-20 w-20 items-center justify-center rounded-full">
-                <Image field={image} />
+                <Image field={image} className="brightness-0 invert" />
               </div>
               {/* Title and Description */}
               <div className="flex flex-col items-center justify-center">
@@ -152,25 +152,25 @@ export const NumberedGrid = (props: FeaturesProps) => {
 
   return (
     <FeatureWrapper props={props}>
-      <div className="container grid grid-cols-1 gap-4 py-24 md:grid-cols-2 lg:grid-cols-3">
+      <div className="container grid grid-cols-1 gap-4 py-24 md:grid-cols-2 lg:grid-cols-4">
         {results.map((item, index) => {
           const title = item?.featureTitle.jsonValue;
           const description = item?.featureDescription.jsonValue;
           return (
             <div
-              className="group text-background hover:bg-accent cursor-pointer rounded-xl p-6"
+              className="group bg-te-teal hover:bg-te-teal-hover cursor-pointer rounded-lg p-6 text-white transition-colors"
               key={index}
             >
               {/* Generated Number */}
-              <h1 className="group-hover:text-background text-background-muted-dark mb-2 text-7xl leading-24">
+              <h1 className="mb-2 text-7xl leading-24 text-white/70 group-hover:text-white">
                 {generateIndexes(index)}
               </h1>
               {/* Title and Description */}
               <div>
-                <div className="text-accent group-hover:text-background mb-4 text-2xl leading-8 font-bold">
+                <div className="mb-4 text-xl leading-8 font-bold text-white">
                   <Text field={title} />
                 </div>
-                <div className="text-background-muted-dark group-hover:text-background leading-7">
+                <div className="leading-7 text-white/90">
                   <Text field={description} />
                 </div>
               </div>

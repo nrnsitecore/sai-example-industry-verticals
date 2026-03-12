@@ -1,3 +1,30 @@
+/* TE Connectivity: primary nav bar (full-width dark blue-gray, white text) */
+.te-nav-bar .component.navigation {
+  @apply bg-transparent text-white;
+}
+
+.te-nav-bar .component.navigation nav {
+  @apply max-lg:bg-te-nav bg-transparent text-white lg:bg-transparent;
+}
+
+.te-nav-bar .component.navigation a,
+.te-nav-bar .component.navigation .navigation-dropdown-trigger {
+  @apply text-white hover:opacity-90;
+}
+
+.te-nav-bar .component.navigation ul[role='menu'] {
+  @apply text-white;
+}
+
+/* Hide logo in nav bar (logo is in header-left); always hide in bar */
+.te-nav-bar .component.navigation ul[role='menubar'] > li.shrink-0 {
+  @apply !hidden;
+}
+
+.te-nav-bar .component.navigation .lg\:flex-row {
+  @apply justify-start gap-6 xl:gap-8;
+}
+
 /* Background layout */
 .cover-background {
   > .component-content {

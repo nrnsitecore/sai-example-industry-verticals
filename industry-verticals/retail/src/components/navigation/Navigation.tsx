@@ -191,25 +191,9 @@ export const Default = ({ params, fields }: NavigationProps) => {
     <div className={`component navigation bg-background ${styles}`} id={id}>
       <div
         className={clsx(
-          'relative z-150 container flex items-center py-4 lg:hidden',
-          !isSimpleLayout &&
-            '[.component.header_&]:grid-cols-2 [.component.header_&]:px-0 [.component.header_&]:max-lg:grid',
-          !isSimpleLayout ? 'flex-row-reverse' : '',
-          isSimpleLayout && !hasLogoRootItem ? 'justify-end' : 'justify-between'
+          'relative z-150 container flex items-center justify-end py-4 lg:hidden'
         )}
       >
-        {hasLogoRootItem && (
-          <Link
-            field={getLinkField(rootItem!)}
-            editable={page.mode.isEditing}
-            className={clsx(
-              'navigation-mobile-trigger',
-              !isSimpleLayout && '[.component.header_&]:mx-auto'
-            )}
-          >
-            {getLinkContent(rootItem!, logoSrc)}
-          </Link>
-        )}
         <HamburgerIcon
           isOpen={isMenuOpen}
           onClick={handleToggleMenu}

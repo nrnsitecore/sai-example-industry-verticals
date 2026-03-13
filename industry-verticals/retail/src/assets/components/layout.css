@@ -25,6 +25,15 @@
   @apply justify-start gap-6 xl:gap-8;
 }
 
+/* Responsive: nav bar and mobile menu spacing */
+.te-nav-bar .component.navigation > div:first-child {
+  @apply px-4 py-3 sm:py-4;
+}
+
+.te-nav-bar .component.navigation nav ul {
+  @apply px-4 py-4 sm:py-6;
+}
+
 /* Background layout */
 .cover-background {
   > .component-content {

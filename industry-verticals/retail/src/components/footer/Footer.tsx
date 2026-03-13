@@ -1,7 +1,6 @@
 import {
   ComponentParams,
   ComponentRendering,
-  Image,
   ImageField,
   Link,
   LinkField,
@@ -12,6 +11,7 @@ import {
   TextField,
 } from '@sitecore-content-sdk/nextjs';
 import React from 'react';
+import { TE_LOGO_URL } from '@/constants/brand';
 
 interface Fields {
   TitleOne: TextField;
@@ -77,7 +77,13 @@ export const Default = (props: FooterProps) => {
         <div className="container grid gap-12 py-28.5 lg:grid-cols-[1fr_3fr]">
           <div className="flex flex-col gap-7">
             <div className="sm:max-w-34">
-              <Image field={props.fields.Logo} />
+              <a href="/" className="inline-block">
+                <img
+                  src={TE_LOGO_URL}
+                  alt="TE Connectivity"
+                  className="h-8 w-auto max-w-full sm:h-10"
+                />
+              </a>
             </div>
             <RichText
               field={props.fields.Description}

@@ -63,7 +63,7 @@ export const Default = (props: NavigationIconsProps): JSX.Element => {
   return (
     <>
       <div className={`component navigation-icons ${props?.params?.styles?.trimEnd()}`} id={id}>
-        <div className="flex items-center gap-3 p-4 lg:gap-5 [.component.header_&]:justify-end [.component.header_&]:px-0">
+        <div className="flex items-center gap-1 p-2 sm:gap-2 sm:p-3 md:gap-3 lg:gap-5 [.component.header_&]:justify-end [.component.header_&]:px-0 lg:p-4">
           <button
             onClick={() => setIsSearchOpen(!isSearchOpen)}
             className="hover:text-accent text-foreground p-2 transition-colors"
@@ -92,7 +92,7 @@ export const Default = (props: NavigationIconsProps): JSX.Element => {
       </div>
       {isSearchOpen && (
         <div className="border-border bg-background absolute top-full right-0 left-0 z-50 border-b shadow-lg">
-          <div className="mx-auto max-w-7xl px-4 py-4">
+          <div className="mx-auto w-full max-w-7xl px-3 py-3 sm:px-4 sm:py-4">
             <div className="flex items-center gap-2">
               <PreviewSearch
                 rfkId={PREVIEW_WIDGET_ID}

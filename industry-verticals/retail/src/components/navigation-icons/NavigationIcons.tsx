@@ -63,7 +63,7 @@ export const Default = (props: NavigationIconsProps): JSX.Element => {
   return (
     <>
       <div className={`component navigation-icons ${props?.params?.styles?.trimEnd()}`} id={id}>
-        <div className="flex items-center gap-1 p-2 sm:gap-2 sm:p-3 md:gap-3 lg:gap-5 [.component.header_&]:justify-end [.component.header_&]:px-0 lg:p-4">
+        <div className="flex items-center gap-1 p-2 sm:gap-2 sm:p-3 md:gap-3 lg:gap-5 lg:p-4 [.component.header_&]:justify-end [.component.header_&]:px-0">
           <button
             onClick={() => setIsSearchOpen(!isSearchOpen)}
             className="hover:text-accent text-foreground p-2 transition-colors"

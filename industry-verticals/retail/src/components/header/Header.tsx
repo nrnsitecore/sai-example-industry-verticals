@@ -20,10 +20,10 @@ export const Default = (props: HeaderProps): JSX.Element => {
               Need Help?
               <span className="hidden sm:inline"> +1 800 522 6752</span>
             </span>
-            <span className="text-accent cursor-pointer whitespace-nowrap hover:underline">Chat</span>
-            <span className="hidden whitespace-nowrap md:inline">
-              English (EN) | United States
+            <span className="text-accent cursor-pointer whitespace-nowrap hover:underline">
+              Chat
             </span>
+            <span className="hidden whitespace-nowrap md:inline">English (EN) | United States</span>
             <span className="whitespace-nowrap md:hidden">EN | US</span>
             <a href="#" className="hover:text-accent whitespace-nowrap transition-colors">
               Login / Register
@@ -37,11 +37,7 @@ export const Default = (props: HeaderProps): JSX.Element => {
         <div className="container flex items-center justify-between gap-2 px-4 py-3 sm:gap-3 md:py-4">
           <div className="min-w-0 flex-1">
             <a href="/" className="inline-flex items-center">
-              <img
-                src={TE_LOGO_URL}
-                alt="TE Connectivity"
-                className="h-7 w-auto min-w-0 sm:h-8"
-              />
+              <img src={TE_LOGO_URL} alt="TE Connectivity" className="h-7 w-auto min-w-0 sm:h-8" />
             </a>
           </div>
           <div className="flex shrink-0">

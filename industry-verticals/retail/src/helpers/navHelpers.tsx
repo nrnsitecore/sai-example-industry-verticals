@@ -18,13 +18,7 @@ export const getLinkContent = (fields: NavItemFields, logoSrc?: string): JSX.Ele
   const isRootItem = isNavRootItem(fields);
 
   if (isRootItem && logoSrc) {
-    return (
-      <img
-        src={TE_LOGO_URL}
-        alt="TE Connectivity"
-        className="h-auto w-36"
-      />
-    );
+    return <img src={TE_LOGO_URL} alt="TE Connectivity" className="h-auto w-36" />;
   }
 
   const textField = fields.NavigationTitle || fields.Title;

@@ -190,9 +190,7 @@ export const Default = ({ params, fields }: NavigationProps) => {
   return (
     <div className={`component navigation bg-background ${styles}`} id={id}>
       <div
-        className={clsx(
-          'relative z-150 container flex items-center justify-end py-4 lg:hidden'
-        )}
+        className={clsx('relative z-150 container flex items-center justify-end py-4 lg:hidden')}
       >
         <HamburgerIcon
           isOpen={isMenuOpen}

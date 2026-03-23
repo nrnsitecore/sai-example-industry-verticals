@@ -1,6 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { ComponentProps } from 'react';
-import { Default as HeroBanner } from '../components/hero-banner/HeroBanner';
+import {
+  Default as HeroBanner,
+  Simple as SimpleHeroBanner,
+} from '../components/hero-banner/HeroBanner';
 import { CommonParams, CommonRendering } from './common/commonData';
 import { createImageField } from './helpers/createFields';
 
@@ -38,5 +41,13 @@ export const Default: Story = {
     const fields = createHeroBannerFields();
 
     return <HeroBanner params={baseParams} rendering={baseRendering} fields={fields} />;
+  },
+};
+
+export const SimpleVariant: Story = {
+  render: () => {
+    const fields = createHeroBannerFields();
+
+    return <SimpleHeroBanner params={baseParams} rendering={baseRendering} fields={fields} />;
   },
 };

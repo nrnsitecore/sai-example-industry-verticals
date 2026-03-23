@@ -104,3 +104,68 @@ export const DefaultHeroBanner = (props: HeroBannerProps) => {
 };
 
 export const Default = withDatasourceCheck()<HeroBannerProps>(DefaultHeroBanner);
+
+/**
+ * Simplified hero without decorative blob/stripe overlays.
+ * Full-bleed background image with a subtle gradient overlay,
+ * making it straightforward to swap imagery from Sitecore.
+ */
+export const SimpleHeroBanner = (props: HeroBannerProps) => {
+  const id = props.params.RenderingIdentifier;
+  const { t } = useI18n();
+
+  return (
+    <section className={`relative ${props?.params?.styles}`} id={id || undefined}>
+      <div className="relative min-h-[80vh]">
+        <div className="absolute inset-0 z-0">
+          <ContentSdkImage field={props.fields.Image} className="h-full w-full object-cover" />
+          <div className="from-foreground/70 via-foreground/40 absolute inset-0 bg-gradient-to-r to-transparent" />
+        </div>
+
+        <div className="relative z-10 container flex min-h-[80vh] flex-col justify-end pb-16">
+          <div className="flex flex-col items-start gap-8 lg:flex-row lg:items-end lg:justify-between">
+            <div className="bg-background/90 dark:bg-background-dark/90 w-full max-w-md rounded-xl p-8 shadow-lg backdrop-blur-sm">
+              <form action="" className="flex flex-col gap-4">
+                <input
+                  type="text"
+                  name="your-name"
+                  id="simple-your-name"
+                  placeholder={t('your_name') || 'Your Name'}
+                  className="form-input"
+                />
+                <input
+                  type="email"
+                  name="your-email"
+                  id="simple-your-email"
+                  placeholder={t('your_email') || 'Your Email'}
+                  className="form-input"
+                />
+                <input
+                  type="text"
+                  name="select-doctor"
+                  id="simple-select-doctor"
+                  placeholder={t('select_doctor') || 'Select a Doctor'}
+                  className="form-input"
+                />
+                <input
+                  type="text"
+                  name="select-date"
+                  id="simple-select-date"
+                  placeholder={t('select_date') || 'Select a Date'}
+                  className="form-input"
+                />
+                <input
+                  type="submit"
+                  value={t('make_appointment') || 'Make an appointment'}
+                  className="btn self-center"
+                />
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export const Simple = withDatasourceCheck()<HeroBannerProps>(SimpleHeroBanner);

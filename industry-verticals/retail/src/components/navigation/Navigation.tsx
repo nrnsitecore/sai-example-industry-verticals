@@ -94,7 +94,7 @@ const NavigationListItem: React.FC<NavigationListItemProps> = ({
           field={getLinkField(fields)}
           editable={page.mode.isEditing}
           onClick={clickHandler}
-          className="hover:text-foreground-light whitespace-nowrap transition-colors"
+          className="whitespace-nowrap transition-colors hover:opacity-80 [.component.header_&]:text-inherit"
         >
           {getLinkContent(fields, logoSrc)}
         </Link>
@@ -133,7 +133,7 @@ const NavigationListItem: React.FC<NavigationListItemProps> = ({
               clsx(
                 'z-110 text-base max-lg:border-b max-lg:pb-4 max-lg:text-sm',
                 'lg:absolute lg:top-full lg:left-1/2 lg:-translate-x-1/2 lg:p-6 lg:transition-all lg:duration-300',
-                'lg:bg-background lg:rounded-xl lg:shadow-md',
+                'lg:bg-dfin-navy-light [.component.header_&]:lg:bg-dfin-navy-light lg:rounded-xl lg:text-white lg:shadow-lg',
                 isActive
                   ? 'max-lg:flex'
                   : 'max-lg:hidden lg:pointer-events-none lg:translate-y-2 lg:scale-95 lg:opacity-0'
@@ -188,7 +188,7 @@ export const Default = ({ params, fields }: NavigationProps) => {
     ));
 
   return (
-    <div className={`component navigation bg-background ${styles}`} id={id}>
+    <div className={`component navigation bg-transparent ${styles}`} id={id}>
       <div
         className={clsx(
           'relative z-150 container flex items-center py-4 lg:hidden',
@@ -228,7 +228,7 @@ export const Default = ({ params, fields }: NavigationProps) => {
 
       <nav
         className={clsx(
-          'bg-background z-100 flex duration-300',
+          '[.component.header_&]:bg-dfin-navy max-lg:bg-dfin-navy z-100 flex duration-300 max-lg:text-white',
           'max-lg:fixed max-lg:inset-0',
           !isMenuOpen && 'max-lg:-translate-y-full max-lg:opacity-0'
         )}

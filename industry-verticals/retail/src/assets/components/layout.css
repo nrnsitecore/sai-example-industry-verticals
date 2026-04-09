@@ -11,7 +11,6 @@
   }
 }
 
-/* This doesn't really do what it says - we may need to rework it */
 .parallax-background {
   > .component-content {
     @apply bg-cover bg-fixed bg-position-[50%_0] bg-no-repeat max-md:bg-scroll;
@@ -19,9 +18,6 @@
 }
 
 /* Background color  */
-/* &:not(.container) - full width container and other full width components - color from edge to edge */
-/* &.container > .component-content - centered container - color only the content to align with grid */
-
 .container-clean-background {
   &:not(.container),
   &.container > .component-content {
@@ -42,23 +38,27 @@
 
 .container-dark-background {
   > .component-content {
-    @apply border-accent;
+    @apply border-dfin-navy;
   }
 
   &:not(.container),
   &.container > .component-content {
-    @apply bg-accent border-accent text-background;
+    @apply bg-dfin-navy border-dfin-navy text-white;
 
     * {
       @apply text-inherit;
     }
 
     .arrow-btn {
-      @apply border-b-background;
+      @apply text-accent hover:border-b-accent border-b-transparent;
 
       &::after {
-        @apply bg-background;
+        @apply bg-accent;
       }
+    }
+
+    .pill-btn {
+      @apply bg-accent text-white;
     }
   }
 }
@@ -75,7 +75,6 @@
 }
 
 /* Spacing */
-/* Using padding for the sides so it doesn't break the grid widths */
 .indent {
   @apply px-12;
 }
@@ -122,6 +121,7 @@
 }
 
 .shim {
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.6);
   padding: 50px;
+  border-radius: 1rem;
 }

@@ -106,7 +106,7 @@ export const Default = (props: ProductListingProps) => {
   return (
     <section className={`component product-listing ${props?.params.styles.trimEnd()}`} id={id}>
       {/* Sort and Filter */}
-      <div className="bg-background-accent">
+      <div className="bg-background-muted">
         <div className="container flex flex-col justify-between gap-5 py-5 sm:flex-row sm:items-center">
           <div>
             {t('product-listing-showing') || 'Showing'} {Math.min(products.length, startIndex + 1)}{' '}
@@ -123,7 +123,7 @@ export const Default = (props: ProductListingProps) => {
               <input
                 type="number"
                 id="items-per-page"
-                className="bg-background outline-border text-foreground-light size-14 rounded-md text-center text-lg [&::-webkit-inner-spin-button]:appearance-none"
+                className="border-border text-foreground-light size-14 rounded-lg border bg-white text-center text-lg [&::-webkit-inner-spin-button]:appearance-none"
                 value={displayCount}
                 onChange={handleDisplayCountChange}
               />
@@ -136,7 +136,7 @@ export const Default = (props: ProductListingProps) => {
               <div className="relative">
                 <select
                   id="sort-by"
-                  className="bg-background text-foreground-light outline-border h-14 w-full appearance-none rounded-md px-7 pr-17 text-lg"
+                  className="border-border text-foreground-light h-14 w-full appearance-none rounded-lg border bg-white px-7 pr-17 text-lg"
                   value={sortOption}
                   onChange={(e) => setSortOptions(e.target.value)}
                 >

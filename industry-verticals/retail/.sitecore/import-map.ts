@@ -30,8 +30,6 @@ import SearchResultsWidget from 'src/components/non-sitecore/search/SearchResult
 import { SEARCH_WIDGET_ID, HIGHLIGHTED_ARTICLES_RFKID, DEFAULT_IMG_URL, PREVIEW_WIDGET_ID, HOMEHIGHLIGHTED_WIDGET_ID } from '@/constants/search';
 import CarouselButton from 'src/components/non-sitecore/CarouselButton';
 import ReviewCard from 'src/components/non-sitecore/ReviewCard';
-import clsx from 'clsx';
-import { Quote } from '@/assets/icons/quote/Quote';
 import { usePagination } from '@/hooks/usePagination';
 import { ProductCard } from '@/components/non-sitecore/ProductCard';
 import { Pagination as Pagination_25a2ac6977db7c44c4c657d8bc0b397259e5032a } from 'src/components/non-sitecore/Pagination';
@@ -79,6 +77,7 @@ import { useClickAway } from '@/hooks/useClickAway';
 import { useStopResponsiveTransition } from '@/hooks/useStopResponsiveTransition';
 import { extractMediaUrl } from '@/helpers/extractMediaUrl';
 import { getLinkContent, getLinkField, isNavLevel, isNavRootItem, prepareFields } from '@/helpers/navHelpers';
+import clsx from 'clsx';
 import { useRouter as useRouter_0e8a928699f624a3ad05eb9c9906b0e7ce1a00be } from 'next/router';
 import { Select as Select_4a7098778d43a9b4dcd5871ec48ea51b5a246850, SelectContent, SelectItem, SelectTrigger, SelectValue } from 'src/shadcn/components/ui/select';
 import { localeOptions } from '@/constants/localeOptions';
@@ -275,18 +274,6 @@ const importMap = [
     module: 'src/components/non-sitecore/ReviewCard',
     exports: [
       { name: 'default', value: ReviewCard },
-    ]
-  },
-  {
-    module: 'clsx',
-    exports: [
-      { name: 'default', value: clsx },
-    ]
-  },
-  {
-    module: '@/assets/icons/quote/Quote',
-    exports: [
-      { name: 'Quote', value: Quote },
     ]
   },
   {
@@ -609,6 +596,12 @@ const importMap = [
       { name: 'isNavLevel', value: isNavLevel },
       { name: 'isNavRootItem', value: isNavRootItem },
       { name: 'prepareFields', value: prepareFields },
+    ]
+  },
+  {
+    module: 'clsx',
+    exports: [
+      { name: 'default', value: clsx },
     ]
   },
   {

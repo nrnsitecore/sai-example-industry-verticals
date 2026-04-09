@@ -30,7 +30,7 @@ const IconDropdown = ({
 } & React.PropsWithChildren) => (
   <Popover>
     <PopoverTrigger
-      className="text-foreground hover:text-accent data-[state=open]:text-accent transition-colors"
+      className="hover:text-accent data-[state=open]:text-accent transition-colors"
       aria-label={label}
     >
       {icon}
@@ -63,10 +63,10 @@ export const Default = (props: NavigationIconsProps): JSX.Element => {
   return (
     <>
       <div className={`component navigation-icons ${props?.params?.styles?.trimEnd()}`} id={id}>
-        <div className="flex items-center gap-3 p-4 lg:gap-5 [.component.header_&]:justify-end [.component.header_&]:px-0">
+        <div className="flex items-center gap-3 p-4 text-current lg:gap-5 [.component.header_&]:justify-end [.component.header_&]:px-0">
           <button
             onClick={() => setIsSearchOpen(!isSearchOpen)}
-            className="hover:text-accent text-foreground p-2 transition-colors"
+            className="hover:text-accent p-2 transition-colors"
           >
             <Search className="size-5" />
           </button>

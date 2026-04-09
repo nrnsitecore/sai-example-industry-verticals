@@ -10,10 +10,7 @@ import {
   Text,
 } from '@sitecore-content-sdk/nextjs';
 import { ComponentProps } from 'lib/component-props';
-import clsx from 'clsx';
-import AccentLine from '@/assets/icons/accent-line/AccentLine';
-import { Quote } from '@/assets/icons/quote/Quote';
-import { CommonStyles, LayoutStyles, PromoFlags } from '@/types/styleFlags';
+import { LayoutStyles, PromoFlags } from '@/types/styleFlags';
 
 interface Fields {
   PromoImageOne: ImageField;
@@ -40,17 +37,14 @@ export type PromoProps = ComponentProps & {
 const isShadowClassActive = (val: boolean) => (val ? 'shadow-2xl' : '');
 
 export const PromoContent = ({ ...props }) => {
-  const isAccentLineVisible = !props?.params?.styles?.includes(CommonStyles.HideAccentLine);
-
   return (
     <div className="space-y-5">
       <div className="eyebrow">
         <Text field={props.fields.PromoSubTitle} />
       </div>
 
-      <h2 className="inline-block max-w-md">
+      <h2 className="max-w-md">
         <Text field={props.fields.PromoTitle} />
-        {isAccentLineVisible && <AccentLine className="w-full max-w-xs" />}
       </h2>
 
       <div className="max-w-lg text-lg">
@@ -64,25 +58,16 @@ export const PromoContent = ({ ...props }) => {
 
 export const SingleImageContainer = ({
   PromoImageOne,
-  withShapes,
   withShadows,
 }: PromoImageGroupProps): JSX.Element => {
   const shadowClass = isShadowClassActive(withShadows ?? false);
   return (
     <>
-      {withShapes && (
-        <div className="bg-background-muted absolute top-0 left-0 z-0 aspect-6/5 w-2/3 rounded-2xl"></div>
-      )}
       <div>
-        <div className={clsx({ 'm-4 md:m-9 md:mb-6 xl:m-15 xl:mb-8': withShapes })}>
-          {withShapes && (
-            <div className="bg-background-muted absolute top-1/2 right-0 z-0 aspect-5/3 w-3/4 -translate-y-1/2 transform rounded-2xl"></div>
-          )}
-          <div
-            className={`relative z-10 aspect-4/3 w-full max-w-4xl overflow-hidden rounded-2xl ${shadowClass}`}
-          >
-            <ContentSdkImage field={PromoImageOne} className="h-full w-full object-cover" />
-          </div>
+        <div
+          className={`relative z-10 aspect-4/3 w-full max-w-4xl overflow-hidden rounded-2xl ${shadowClass}`}
+        >
+          <ContentSdkImage field={PromoImageOne} className="h-full w-full object-cover" />
         </div>
       </div>
     </>
@@ -119,9 +104,6 @@ export const MultipleImageContainer = ({
           </div>
         </div>
         <div className="relative w-full md:w-2/3">
-          {withShapes && (
-            <div className="bg-background-muted absolute right-0 z-0 aspect-[495/422] w-3/4 rounded-2xl md:-top-10 xl:-top-15"></div>
-          )}
           <div className={`relative aspect-3/2 overflow-visible rounded-2xl ${marginClass} z-10`}>
             <div
               className={`relative z-10 h-full w-full overflow-hidden rounded-2xl ${shadowClass}`}
@@ -239,9 +221,11 @@ export const WithQuote = (props: PromoProps): JSX.Element => {
     >
       {withQuote && (
         <div
-          className={`absolute left-5 md:top-[10%] lg:top-[25%] lg:left-1/2 lg:-translate-x-1/2 ${classesWhenReversed.quoteFlip} } text-background-accent! z-20`}
+          className={`text-accent/10 absolute left-5 z-20 md:top-[10%] lg:top-[25%] lg:left-1/2 lg:-translate-x-1/2 ${classesWhenReversed.quoteFlip}`}
         >
-          <Quote className="h-10 md:h-20 lg:h-25 xl:h-30" />
+          <svg className="h-10 md:h-20 lg:h-25 xl:h-30" viewBox="0 0 100 80" fill="currentColor">
+            <path d="M0 80V46.7C0 15.6 17.8 2.2 42.2 0l4.4 13.3C28.9 16.7 22.2 26.7 22.2 40h17.8v40H0zm55.6 0V46.7C55.6 15.6 73.3 2.2 97.8 0L100 13.3c-15.6 3.3-22.2 13.3-22.2 26.7H97.8v40H55.6z" />
+          </svg>
         </div>
       )}
       <div className="bg-background">

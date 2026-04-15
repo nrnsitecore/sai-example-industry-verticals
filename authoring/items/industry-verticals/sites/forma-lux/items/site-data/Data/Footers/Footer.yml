@@ -7,7 +7,10 @@ SharedFields:
 - ID: "2895a16e-c1b8-4e79-959a-802d5bc81a5a"
   Hint: Logo
   Value: |
-    <image mediaid="8cc2a449-e23b-488c-bb23-3d7c7a07f6e7" />
+    <image mediaid="cfe28b84-159b-4830-899d-57bf4be0f192" />
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "cad3145d-0d0e-40e4-9e45-44f09ec05f41"
 Languages:
 - Language: en
   Versions:
@@ -41,7 +44,7 @@ Languages:
       Value: Copyright © 2025
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "d0be7b71-5f16-4ea1-9422-041c955615d2"
+      Value: "683ca5a9-a9d7-476a-9777-4e2b21989a4e"
     - ID: "9f2b5ebe-6b3a-4128-b6e9-6b7adf4e86da"
       Hint: PolicyText
       Value: |
@@ -49,7 +52,7 @@ Languages:
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
-        sitecore\jeral.sandeeptha@sitecore.com
+        sitecore\nick.robinett@sitecore.com
     - ID: "d12db112-ac8e-4701-9186-1c25d7c2c148"
       Hint: TitleTwo
       Value: Services
@@ -58,7 +61,7 @@ Languages:
       Value: Follow Us
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20250828T082243Z
+      Value: 20260415T151238Z
     - ID: "e646865b-2d8d-4608-a43e-42c7f1d21675"
       Hint: TitleFive
       Value: Install App

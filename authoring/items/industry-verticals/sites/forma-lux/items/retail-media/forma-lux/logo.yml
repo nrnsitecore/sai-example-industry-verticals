@@ -1,0 +1,54 @@
+﻿---
+ID: "32622585-aebb-4ea4-9414-f38b909072b7"
+Parent: "54f89e61-6008-4130-b6d9-3f4c5fdc447b"
+Template: "f1828a2c-7e5d-4bbd-98ca-320474871548"
+Path: "/sitecore/media library/Project/industry-verticals/forma-lux/logo"
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: "-/media/32622585AEBB4EA49414F38B909072B7.ashx?h=16&thn=1&w=16"
+- ID: "40e50ed9-ba07-4702-992e-a912738d32dc"
+  Hint: Blob
+  BlobID: "c2a9a1e6-8db5-430c-9dd0-fe0ea3f9d716"
+  Value: PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MC4wOTggMjIuNTMiPgogIDxkZWZzPgogICAgPHN0eWxlPgogICAgICAuY2xzLTEgewogICAgICAgIGZpbGw6ICMyZTI0NTk7CiAgICAgIH0KCiAgICAgIC5jbHMtMiB7CiAgICAgICAgZmlsbDogIzg1MDBmZjsKICAgICAgfQogICAgPC9zdHlsZT4KICA8L2RlZnM+CiAgPGcgaWQ9Ijo6X2xvZ28iIGRhdGEtbmFtZT0iOjogbG9nbyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIzOCAtMjUpIj4KICAgIDxwYXRoIGlkPSJQYXRoXzEiIGRhdGEtbmFtZT0iUGF0aCAxIiBjbGFzcz0iY2xzLTEiIGQ9Ik0xMDAuNTE5LDBoLTE2LjdBMi4zMiwyLjMyLDAsMCwwLDgxLjUsMi4zMThWMjIuMDUzYS40NjYuNDY2LDAsMCwwLC40NzcuNDc3aDUuMzg1YS40NjYuNDY2LDAsMCwwLC40NzctLjQ3N3YtNS43NmEuMTQ3LjE0NywwLDAsMSwuMTM2LS4xMzZoMTIuNTQzVjEwLjUzMkg4Ny45NzZhLjE0Ny4xNDcsMCwwLDEtLjEzNi0uMTM2VjYuNDc2YS4xNDcuMTQ3LDAsMCwxLC4xMzYtLjEzNmgxMi41NDNaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxODQuMjc5IDI1KSIvPgogICAgPHBhdGggaWQ9IlBhdGhfMiIgZGF0YS1uYW1lPSJQYXRoIDIiIGNsYXNzPSJjbHMtMSIgZD0iTTE5NC44NDIsMGgtNS4zODVhLjQ2Ni40NjYsMCwwLDAtLjQ3Ny40NzdWMTEuNjIzYS4xMjkuMTI5LDAsMCwxLS4yMzkuMDY4bC02Ljg1MS0xMC42QTIuNTA4LDIuNTA4LDAsMCwwLDE3OS44MSwwSDE3NC44VjIyLjUzaDUuODYzYS40NjYuNDY2LDAsMCwwLC40NzctLjQ3N1YxMS42MjNhLjEyOS4xMjksMCwwLDEsLjIzOS0uMDY4bDYuODUxLDkuOTE5YTIuNTUxLDIuNTUxLDAsMCwwLDIuMDQ1LDEuMDU3aDQuNTY3YS40NjYuNDY2LDAsMCwwLC40NzctLjQ3N1YuNDc3QS40NjYuNDY2LDAsMCwwLDE5NC44NDIsMFoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEyMi43NzkgMjUpIi8+CiAgICA8cGF0aCBpZD0iUGF0aF8zIiBkYXRhLW5hbWU9IlBhdGggMyIgY2xhc3M9ImNscy0yIiBkPSJNMTMuOTc1LDBIMi4zMThBMi4zNDIsMi4zNDIsMCwwLDAsMCwyLjMxOHY4LjkzSDBhMy4xODYsMy4xODYsMCwwLDAsMy4xNywzLjE3LDMuMTg2LDMuMTg2LDAsMCwwLDMuMTctMy4xN2gwVjYuODE3YS40NjYuNDY2LDAsMCwxLC40NzctLjQ3N2g3LjE5MmE1LDUsMCwwLDEsNS4wMSw1LjAxLDQuODg5LDQuODg5LDAsMCwxLTQuOTA4LDQuODA2SC40NzdBLjQ2Ni40NjYsMCwwLDAsMCwxNi42MzN2NS4zODVhLjQ2Ni40NjYsMCwwLDAsLjQ3Ny40NzdsMTMuNjM0LS4wMzRBMTEuMjMxLDExLjIzMSwwLDEsMCwxMy45NzUsMFoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDIzOCAyNSkiLz4KICAgIDxyZWN0IGlkPSJSZWN0YW5nbGVfMSIgZGF0YS1uYW1lPSJSZWN0YW5nbGUgMSIgY2xhc3M9ImNscy0xIiB3aWR0aD0iNi4zNCIgaGVpZ2h0PSIyMi41MyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjg4LjAwMiAyNSkiLz4KICA8L2c+Cjwvc3ZnPgo=
+- ID: "6954b7c7-2487-423f-8600-436cb3b6dc0e"
+  Hint: Size
+  Value: 1508
+- ID: "6f47a0a5-9c94-4b48-abeb-42d38def6054"
+  Hint: Mime Type
+  Value: image/svg+xml
+- ID: "c06867fe-9a43-4c7d-b739-48780492d06f"
+  Hint: Extension
+  Value: svg
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "d3b2628e-8f92-4aa6-ab85-1fba90798557"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260415T151204Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\nick.robinett@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\nick.robinett@sitecore.com
+    - ID: "65885c44-8fcd-4a7f-94f1-ee63703fe193"
+      Hint: Alt
+      Value: logo
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "73fd38cb-1cff-4e19-b3e8-9931484b39d1"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\nick.robinett@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260415T151205Z

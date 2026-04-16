@@ -1,7 +1,6 @@
 import { NavigationProps, NavItemFields } from '@/components/navigation/Navigation';
 import React, { JSX } from 'react';
 import { LinkField, Text } from '@sitecore-content-sdk/nextjs';
-import { TE_LOGO_URL } from '@/constants/brand';
 
 export const isNavLevel = (fields: NavItemFields, level: number): boolean => {
   return Array.isArray(fields.Styles) && fields.Styles.includes(`level${level}`);
@@ -18,7 +17,7 @@ export const getLinkContent = (fields: NavItemFields, logoSrc?: string): JSX.Ele
   const isRootItem = isNavRootItem(fields);
 
   if (isRootItem && logoSrc) {
-    return <img src={TE_LOGO_URL} alt="TE Connectivity" className="h-auto w-36" />;
+    return <img src={logoSrc} alt="Logo" className="h-auto w-36" />;
   }
 
   const textField = fields.NavigationTitle || fields.Title;

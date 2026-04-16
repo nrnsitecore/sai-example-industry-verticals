@@ -22,37 +22,34 @@ type ReviewCardProps = SitecoreItem<{
 const ReviewCard = (props: ReviewCardProps) => {
   return (
     <>
-      <div className="aspect-square min-h-96 w-full rounded-2xl">
+      <div className="aspect-square min-h-96 w-full overflow-hidden rounded-2xl">
         <ContentSdkImage className="image-cover rounded-2xl" field={props.fields.ReviewImage} />
       </div>
-      <div className="px-5">
-        <div className="bg-background relative -top-15 flex min-h-70 flex-col items-center justify-between rounded-2xl p-8 text-center shadow-xl">
-          {/* Image */}
-          <div className="bg-background absolute -top-10 flex h-[66px] w-[66px] items-center justify-center rounded-full">
+      <div className="px-3">
+        <div className="shadow-soft relative -top-14 flex min-h-60 flex-col items-center justify-between rounded-2xl bg-white p-6 text-center">
+          <div className="shadow-subtle absolute -top-8 flex h-16 w-16 items-center justify-center rounded-full bg-white">
             {props.fields.Avatar.value?.src || props.isPageEditing ? (
               <ContentSdkImage
-                width={50}
-                height={50}
+                width={48}
+                height={48}
                 field={props.fields.Avatar}
-                className="h-[50px] w-[50px] rounded-full"
+                className="h-12 w-12 rounded-full"
               />
             ) : (
-              <div className="!text-foreground bg-background-muted flex h-[50px] w-[50px] items-center justify-center rounded-full">
-                <User className="size-8" />
+              <div className="bg-background-muted text-foreground-muted flex h-12 w-12 items-center justify-center rounded-full">
+                <User className="size-6" />
               </div>
             )}
-            <div className="wavy-bottom-left bg-background absolute top-5 -left-7 h-[30px] w-[30px]"></div>
-            <div className="wavy-bottom-right bg-background absolute top-5 -right-7 h-[30px] w-[30px]"></div>
           </div>
-          <div className="!text-background-muted-light">
-            <div className="text-center text-xl leading-normal font-bold capitalize">
+          <div className="text-foreground mt-6">
+            <div className="text-center text-base font-semibold capitalize">
               <Text field={props.fields.ReviewerName} />
             </div>
-            <div className="text-center text-sm leading-normal font-normal">
+            <div className="text-foreground-muted text-center text-xs tracking-[0.1em] uppercase">
               <Text field={props.fields.Caption} />
             </div>
           </div>
-          <div className="!text-background-muted-light text-center text-sm leading-5 font-normal">
+          <div className="text-foreground-light text-center text-sm leading-relaxed">
             <Text field={props.fields.Description} />
           </div>
           <StarRating rating={props.fields.Rating.value} />

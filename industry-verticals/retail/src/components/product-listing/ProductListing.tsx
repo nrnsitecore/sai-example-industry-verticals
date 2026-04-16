@@ -108,35 +108,34 @@ export const Default = (props: ProductListingProps) => {
       {/* Sort and Filter */}
       <div className="bg-background-accent">
         <div className="container flex flex-col justify-between gap-5 py-5 sm:flex-row sm:items-center">
-          <div>
+          <div className="text-foreground-muted text-sm">
             {t('product-listing-showing') || 'Showing'} {Math.min(products.length, startIndex + 1)}{' '}
             - {Math.min(endIndex, products.length)} {t('product-listing-of') || 'of'}{' '}
             {products.length} {t('product-listing-results') || 'results'}
           </div>
 
-          {/* Sort Options */}
-          <div className="gap flex items-center gap-x-7">
+          <div className="flex items-center gap-x-6">
             <div>
-              <label htmlFor="items-per-page" className="me-4 text-lg">
+              <label htmlFor="items-per-page" className="text-foreground-muted me-3 text-sm">
                 {t('product-listing-show') || 'Show'}
               </label>
               <input
                 type="number"
                 id="items-per-page"
-                className="bg-background outline-border text-foreground-light size-14 rounded-md text-center text-lg [&::-webkit-inner-spin-button]:appearance-none"
+                className="border-border text-foreground focus:border-foreground size-12 rounded-full border bg-white text-center text-sm focus:outline-none [&::-webkit-inner-spin-button]:appearance-none"
                 value={displayCount}
                 onChange={handleDisplayCountChange}
               />
             </div>
 
             <div className="flex flex-col sm:flex-row sm:items-center">
-              <label htmlFor="sort-by" className="me-4 text-lg">
+              <label htmlFor="sort-by" className="text-foreground-muted me-3 text-sm">
                 {t('product-listing-sort-by') || 'Sort by'}
               </label>
               <div className="relative">
                 <select
                   id="sort-by"
-                  className="bg-background text-foreground-light outline-border h-14 w-full appearance-none rounded-md px-7 pr-17 text-lg"
+                  className="border-border text-foreground focus:border-foreground h-12 w-full appearance-none rounded-full border bg-white px-5 pr-12 text-sm focus:outline-none"
                   value={sortOption}
                   onChange={(e) => setSortOptions(e.target.value)}
                 >
@@ -146,7 +145,7 @@ export const Default = (props: ProductListingProps) => {
                     </option>
                   ))}
                 </select>
-                <ChevronDown className="text-foreground-light pointer-events-none absolute top-1/2 right-7 size-7 -translate-y-1/2 transform" />
+                <ChevronDown className="text-foreground-muted pointer-events-none absolute top-1/2 right-4 size-5 -translate-y-1/2 transform" />
               </div>
             </div>
           </div>

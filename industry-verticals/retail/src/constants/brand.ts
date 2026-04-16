@@ -1,5 +1,4 @@
 /**
- * TE Connectivity brand assets (replacing FormaLux for this site)
+ * Brand configuration — placeholder for site logo if needed.
+ * Logo is provided via Sitecore navigation root item.
  */
-export const TE_LOGO_URL =
-  'https://www.te.com/_TEincludes/ver/1694/v2/images/te-connectivity-logo.svg';

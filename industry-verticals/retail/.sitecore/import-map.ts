@@ -16,14 +16,13 @@ import { faFacebookF, faInstagram, faLinkedin, faTwitter, faYoutube } from '@for
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { FacebookIcon, InstagramIcon, LinkedinIcon, TwitterIcon, YoutubeIcon } from '@/assets/icons/social/social';
 import { isParamEnabled } from '@/helpers/isParamEnabled';
-import AccentLine from '@/assets/icons/accent-line/AccentLine';
 import ProductCarousel from 'src/components/non-sitecore/ProductCarousel';
-import { CommonStyles, LayoutStyles, PromoFlags, HeroBannerStyles } from '@/types/styleFlags';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation, A11y, Keyboard } from 'swiper/modules';
 import { ArrowRight, ChevronLeft, ChevronRight, ChevronDown, Heart, Plus, Star, User, X, Check, Loader2, LoaderCircle, ShoppingCart, Search, Globe, MoreHorizontal, Home } from 'lucide-react';
 import Link_a258c208ba01265ca0aa9c7abae745cc7141aa63 from 'next/link';
 import { cn } from '@/shadcn/lib/utils';
+import { LayoutStyles, PromoFlags, HeroBannerStyles } from '@/types/styleFlags';
 import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 import QuestionsAnswers from 'src/components/non-sitecore/search/QuestionsAnswers';
 import SearchResultsWidget from 'src/components/non-sitecore/search/SearchResultsComponent';
@@ -31,7 +30,6 @@ import { SEARCH_WIDGET_ID, HIGHLIGHTED_ARTICLES_RFKID, DEFAULT_IMG_URL, PREVIEW_
 import CarouselButton from 'src/components/non-sitecore/CarouselButton';
 import ReviewCard from 'src/components/non-sitecore/ReviewCard';
 import clsx from 'clsx';
-import { Quote } from '@/assets/icons/quote/Quote';
 import { usePagination } from '@/hooks/usePagination';
 import { ProductCard } from '@/components/non-sitecore/ProductCard';
 import { Pagination as Pagination_25a2ac6977db7c44c4c657d8bc0b397259e5032a } from 'src/components/non-sitecore/Pagination';
@@ -82,7 +80,6 @@ import { getLinkContent, getLinkField, isNavLevel, isNavRootItem, prepareFields 
 import { useRouter as useRouter_0e8a928699f624a3ad05eb9c9906b0e7ce1a00be } from 'next/router';
 import { Select as Select_4a7098778d43a9b4dcd5871ec48ea51b5a246850, SelectContent, SelectItem, SelectTrigger, SelectValue } from 'src/shadcn/components/ui/select';
 import { localeOptions } from '@/constants/localeOptions';
-import { TE_LOGO_URL } from '@/constants/brand';
 import { generateIndexes } from '@/helpers/generateIndexes';
 import client from 'lib/sitecore-client';
 import * as FEAAS from '@sitecore-feaas/clientside/react';
@@ -165,24 +162,9 @@ const importMap = [
     ]
   },
   {
-    module: '@/assets/icons/accent-line/AccentLine',
-    exports: [
-      { name: 'default', value: AccentLine },
-    ]
-  },
-  {
     module: 'src/components/non-sitecore/ProductCarousel',
     exports: [
       { name: 'default', value: ProductCarousel },
-    ]
-  },
-  {
-    module: '@/types/styleFlags',
-    exports: [
-      { name: 'CommonStyles', value: CommonStyles },
-      { name: 'LayoutStyles', value: LayoutStyles },
-      { name: 'PromoFlags', value: PromoFlags },
-      { name: 'HeroBannerStyles', value: HeroBannerStyles },
     ]
   },
   {
@@ -237,6 +219,14 @@ const importMap = [
     ]
   },
   {
+    module: '@/types/styleFlags',
+    exports: [
+      { name: 'LayoutStyles', value: LayoutStyles },
+      { name: 'PromoFlags', value: PromoFlags },
+      { name: 'HeroBannerStyles', value: HeroBannerStyles },
+    ]
+  },
+  {
     module: 'next/navigation',
     exports: [
       { name: 'useSearchParams', value: useSearchParams },
@@ -282,12 +272,6 @@ const importMap = [
     module: 'clsx',
     exports: [
       { name: 'default', value: clsx },
-    ]
-  },
-  {
-    module: '@/assets/icons/quote/Quote',
-    exports: [
-      { name: 'Quote', value: Quote },
     ]
   },
   {
@@ -632,12 +616,6 @@ const importMap = [
     module: '@/constants/localeOptions',
     exports: [
       { name: 'localeOptions', value: localeOptions },
-    ]
-  },
-  {
-    module: '@/constants/brand',
-    exports: [
-      { name: 'TE_LOGO_URL', value: TE_LOGO_URL },
     ]
   },
   {

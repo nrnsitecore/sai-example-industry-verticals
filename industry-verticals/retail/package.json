@@ -122,5 +122,8 @@
     "extends": [
       "plugin:storybook/recommended"
     ]
+  },
+  "overrides": {
+    "elliptic": "^6.6.1"
   }
 }

@@ -1,50 +1,44 @@
 @theme {
-  /* TE Connectivity brand: foreground */
-  --color-foreground: #1e1e1e;
-  --color-foreground-light: #505050;
-  --color-foreground-muted: #9f9f9f;
+  --color-foreground: #0a0a0a;
+  --color-foreground-light: #4a4a4a;
+  --color-foreground-muted: #8a8a8a;
 
-  /* Backgrounds */
-  --color-background: #fff;
-  --color-background-accent: #f5f5f5;
-  --color-background-muted: #e8e8e8;
-  --color-background-muted-light: #7a7a7a;
-  --color-background-muted-dark: #666;
-  --color-background-surface: #fafafa;
+  --color-background: #ffffff;
+  --color-background-accent: #faf9f7;
+  --color-background-muted: #f5f4f2;
+  --color-background-muted-light: #a0a0a0;
+  --color-background-muted-dark: #6b6b6b;
+  --color-background-surface: #fdfcfa;
 
-  /* TE Connectivity accent orange */
-  --color-accent: #ff6600;
-  --color-accent-hover: #e65c00;
+  --color-accent: #0a0a0a;
+  --color-accent-hover: #333333;
 
-  /* TE nav/banner dark blue-gray */
-  --color-te-nav: #1e3a5f;
-  --color-te-nav-hover: #2a4a75;
+  --color-luxury-sage: #8b9e8b;
+  --color-luxury-blush: #d4b5a0;
 
-  /* TE feature cards dark teal */
-  --color-te-teal: #00677f;
-  --color-te-teal-hover: #007a94;
+  --color-success: #4a9e7e;
+  --color-danger: #c45555;
 
-  --color-success: #2ec1ac;
-  --color-danger: #e97171;
+  --color-border: #e8e6e3;
 
-  --color-border: #e0e0e0;
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-heading: 'Cormorant Garamond', serif;
+  --font-body: 'Inter', sans-serif;
 
-  /* Clean sans-serif for TE style */
-  --font-heading: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --radius-base: 0.75rem;
 
-  --radius-base: 0.25rem;
-
-  /*
-  This does not show in the theme editor
-  but is used to override the defaults based on the user's selection for radius-base
-  */
-  --radius-xs: calc(var(--radius-base) * 0.5);
-  --radius-sm: calc(var(--radius-base) * 1);
+  --radius-xs: calc(var(--radius-base) * 0.25);
+  --radius-sm: calc(var(--radius-base) * 0.5);
   --radius-md: var(--radius-base);
   --radius-lg: calc(var(--radius-base) * 1.5);
   --radius-xl: calc(var(--radius-base) * 2);
   --radius-2xl: calc(var(--radius-base) * 3);
   --radius-3xl: calc(var(--radius-base) * 4);
   --radius-4xl: calc(var(--radius-base) * 5);
+
+  --shadow-subtle: 0 2px 12px rgba(0, 0, 0, 0.04);
+  --shadow-soft: 0 8px 32px rgba(0, 0, 0, 0.06);
+  --shadow-hover: 0 12px 48px rgba(0, 0, 0, 0.1);
+
+  --ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
 }

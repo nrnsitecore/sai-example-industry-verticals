@@ -5,19 +5,18 @@
   h4,
   h5,
   h6 {
-    @apply text-accent mb-4.5 text-lg;
+    @apply text-foreground mb-4.5 text-sm font-medium tracking-[0.15em] uppercase;
   }
 
   ul {
     @apply flex flex-row flex-wrap gap-4;
   }
 
-  a:hover {
-    @apply underline;
+  a {
+    @apply text-foreground-light hover:text-foreground transition-all duration-400;
   }
 }
 
-/* list vertical */
 .link-list.list-vertical {
   ul {
     @apply flex-col;

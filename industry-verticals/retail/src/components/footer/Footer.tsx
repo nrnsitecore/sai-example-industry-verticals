@@ -4,6 +4,7 @@ import {
   ImageField,
   Link,
   LinkField,
+  NextImage as ContentSdkImage,
   Placeholder,
   RichText,
   RichTextField,
@@ -11,7 +12,6 @@ import {
   TextField,
 } from '@sitecore-content-sdk/nextjs';
 import React from 'react';
-import { TE_LOGO_URL } from '@/constants/brand';
 
 interface Fields {
   TitleOne: TextField;
@@ -33,10 +33,8 @@ type FooterProps = {
 };
 
 export const Default = (props: FooterProps) => {
-  // rendering item id
   const id = props.params.RenderingIdentifier;
 
-  // placeholders keys
   const phKeyOne = `footer-list-first-${props?.params?.DynamicPlaceholderId}`;
   const phKeyTwo = `footer-list-second-${props?.params?.DynamicPlaceholderId}`;
   const phKeyThree = `footer-list-third-${props?.params?.DynamicPlaceholderId}`;
@@ -73,28 +71,27 @@ export const Default = (props: FooterProps) => {
 
   return (
     <section className={`component footer relative ${props.params.styles} overflow-hidden`} id={id}>
-      <div className="bg-te-nav text-white">
-        <div className="container grid gap-12 py-28.5 lg:grid-cols-[1fr_3fr]">
-          <div className="flex flex-col gap-7">
+      <div className="bg-[#0a0a0a] text-white">
+        <div className="container grid gap-16 py-24 lg:grid-cols-[1fr_3fr]">
+          <div className="flex flex-col gap-6">
             <div className="sm:max-w-34">
-              <a href="/" className="inline-block">
-                <img
-                  src={TE_LOGO_URL}
-                  alt="TE Connectivity"
-                  className="h-8 w-auto max-w-full sm:h-10"
-                />
-              </a>
+              <ContentSdkImage
+                field={props.fields.Logo}
+                className="h-8 w-auto max-w-full brightness-0 invert sm:h-10"
+              />
             </div>
             <RichText
               field={props.fields.Description}
-              className="[&_a]:text-accent text-white/90 [&_a]:hover:opacity-90"
+              className="text-sm leading-relaxed text-white/60 [&_a]:text-white/80 [&_a]:transition-colors [&_a]:hover:text-white"
             />
           </div>
-          <div className="grid gap-13 sm:grid-cols-3 lg:grid-cols-5 lg:gap-5 xl:gap-12">
+          <div className="grid gap-10 sm:grid-cols-3 lg:grid-cols-5 lg:gap-6 xl:gap-12">
             {sections.map(({ key, title, content }) => (
               <div key={key}>
-                <div className="text-accent mb-8 text-lg font-bold">{title}</div>
-                <div className="space-y-4 [&_a]:text-white/90 [&_a]:hover:text-white">
+                <div className="mb-6 text-xs font-medium tracking-[0.2em] text-white/80 uppercase">
+                  {title}
+                </div>
+                <div className="space-y-3 [&_a]:text-sm [&_a]:text-white/50 [&_a]:transition-colors [&_a]:hover:text-white">
                   {content}
                 </div>
               </div>
@@ -102,14 +99,20 @@ export const Default = (props: FooterProps) => {
           </div>
         </div>
       </div>
-      <div className="bg-background">
-        <div className="container flex items-center justify-between py-8.5 max-sm:flex-col max-sm:items-start max-sm:gap-10">
+      <div className="border-t border-white/10 bg-[#0a0a0a]">
+        <div className="container flex items-center justify-between py-6 text-sm text-white/40 max-sm:flex-col max-sm:items-start max-sm:gap-6">
           <div className="max-sm:order-2">
             <Text field={props.fields.CopyrightText} />
           </div>
-          <div className="flex items-center justify-between gap-20 max-lg:gap-10 max-sm:order-1 max-sm:flex-col max-sm:items-start max-sm:gap-5">
-            <Link field={props.fields.TermsText} className="hover:underline" />
-            <Link field={props.fields.PolicyText} className="hover:underline" />
+          <div className="flex items-center justify-between gap-12 max-sm:order-1 max-sm:flex-col max-sm:items-start max-sm:gap-4">
+            <Link
+              field={props.fields.TermsText}
+              className="transition-colors hover:text-white/70"
+            />
+            <Link
+              field={props.fields.PolicyText}
+              className="transition-colors hover:text-white/70"
+            />
           </div>
         </div>
       </div>

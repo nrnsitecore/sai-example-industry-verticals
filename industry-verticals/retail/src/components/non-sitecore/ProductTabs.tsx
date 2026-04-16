@@ -21,9 +21,10 @@ export const ProductTabs = ({ product, isPageEditing, rendering }: ProductTabsPr
     'description'
   );
 
-  const tabBase = 'border-b-2 pb-2 transition text-md sm:text-xl';
-  const tabActive = 'border-accent text-accent';
-  const tabInactive = 'text-foreground-light border-transparent';
+  const tabBase =
+    'border-b-2 pb-2 transition-all duration-400 text-sm sm:text-base uppercase tracking-[0.1em] font-medium';
+  const tabActive = 'border-foreground text-foreground';
+  const tabInactive = 'text-foreground-muted border-transparent hover:text-foreground';
 
   return (
     <div className="bg-background-muted mt-10 py-6">

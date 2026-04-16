@@ -8,8 +8,6 @@ import {
   Text,
 } from '@sitecore-content-sdk/nextjs';
 import React from 'react';
-import AccentLine from '@/assets/icons/accent-line/AccentLine';
-import { CommonStyles } from '@/types/styleFlags';
 
 interface Fields {
   data: {
@@ -41,9 +39,7 @@ type FeatureWrapperProps = {
 };
 
 const FeatureWrapper = (wrapperProps: FeatureWrapperProps) => {
-  // rendering item id
   const id = wrapperProps.props.params.RenderingIdentifier;
-
   return (
     <section className={`${wrapperProps.props.params.styles}`} id={id ? id : undefined}>
       {wrapperProps.children}
@@ -52,32 +48,28 @@ const FeatureWrapper = (wrapperProps: FeatureWrapperProps) => {
 };
 
 export const Default = (props: FeaturesProps) => {
-  // results of the graphql
   const results = props.fields.data.datasource.children.results;
-  const hideAccentLine = props.params.styles?.includes(CommonStyles.HideAccentLine);
   const featureSectionTitle = props.fields.data.datasource.title;
 
   return (
     <FeatureWrapper props={props}>
-      <div className="container grid grid-cols-1 py-20 lg:grid-cols-[1fr_2fr] lg:gap-10">
-        <div className="mb-20 lg:mb-0">
-          <h2 className="inline-block max-w-md font-bold max-lg:text-[42px]">
+      <div className="container grid grid-cols-1 py-24 lg:grid-cols-[1fr_2fr] lg:gap-16">
+        <div className="mb-16 lg:mb-0">
+          <h2 className="max-w-md font-semibold">
             <Text field={featureSectionTitle.jsonValue} />
-            {!hideAccentLine && <AccentLine className="w-full max-w-xs" />}
           </h2>
         </div>
-        <div className="grid grid-cols-1 gap-16 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
           {results.map((item, index) => {
             const title = item.featureTitle.jsonValue;
             const description = item.featureDescription.jsonValue;
             const link = item.featureLink.jsonValue;
             return (
               <div className="flex flex-col" key={index}>
-                {/* Title, Link and Description */}
-                <div className="mb-5 text-2xl font-bold">
+                <div className="font-heading mb-4 text-xl font-semibold">
                   <Text field={title} />
                 </div>
-                <div className="text-foreground mb-3.5 flex-auto leading-7">
+                <div className="text-foreground-light mb-4 flex-auto leading-relaxed">
                   <Text field={description} />
                 </div>
                 <div>
@@ -93,17 +85,19 @@ export const Default = (props: FeaturesProps) => {
 };
 
 export const ImageGrid = (props: FeaturesProps) => {
-  // results of the graphql
   const results = props.fields.data.datasource.children.results;
 
   return (
     <FeatureWrapper props={props}>
-      <div className="container grid grid-cols-1 gap-4 py-9 md:grid-cols-2 lg:grid-cols-5">
+      <div className="container grid grid-cols-2 gap-4 py-12 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
         {results.map((item, index) => {
           const imageField = item?.featureImage.jsonValue;
           return (
-            <div className="flex items-center justify-center py-9 lg:py-2" key={index}>
-              {imageField && <Image field={imageField} className="max-h-20 object-contain" />}
+            <div
+              className="flex items-center justify-center py-6 opacity-40 grayscale transition-all duration-400 hover:opacity-100 hover:grayscale-0 lg:py-4"
+              key={index}
+            >
+              {imageField && <Image field={imageField} className="max-h-16 object-contain" />}
             </div>
           );
         })}
@@ -113,28 +107,25 @@ export const ImageGrid = (props: FeaturesProps) => {
 };
 
 export const ThreeColGridCentered = (props: FeaturesProps) => {
-  // results of the graphql
   const results = props.fields.data.datasource.children.results;
 
   return (
     <FeatureWrapper props={props}>
-      <div className="container flex flex-col flex-wrap justify-evenly gap-20 md:flex-row lg:gap-20">
+      <div className="container flex flex-col flex-wrap justify-evenly gap-16 py-24 md:flex-row">
         {results.map((item, index) => {
           const title = item.featureTitle.jsonValue;
           const description = item.featureDescription.jsonValue;
           const image = item.featureImage.jsonValue;
           return (
             <div className="flex flex-col items-center justify-start 2xl:w-80" key={index}>
-              {/* Image - TE style orange circle */}
-              <div className="bg-accent mb-7 flex h-20 w-20 items-center justify-center rounded-full">
-                <Image field={image} className="brightness-0 invert" />
+              <div className="bg-background-muted mb-6 flex h-20 w-20 items-center justify-center rounded-full">
+                <Image field={image} className="size-10 opacity-70" />
               </div>
-              {/* Title and Description */}
               <div className="flex flex-col items-center justify-center">
-                <div className="mb-2 leading-0.5">
-                  <Text tag="h5" className="text-accent" field={title} />
+                <div className="mb-2">
+                  <Text tag="h5" className="text-foreground" field={title} />
                 </div>
-                <div className="text-background-muted-light text-center">
+                <div className="text-foreground-muted text-center">
                   <Text field={description} />
                 </div>
               </div>
@@ -147,30 +138,27 @@ export const ThreeColGridCentered = (props: FeaturesProps) => {
 };
 
 export const NumberedGrid = (props: FeaturesProps) => {
-  // results of the graphql
   const results = props.fields.data.datasource.children.results;
 
   return (
     <FeatureWrapper props={props}>
-      <div className="container grid grid-cols-1 gap-4 py-24 md:grid-cols-2 lg:grid-cols-4">
+      <div className="container grid grid-cols-1 gap-6 py-24 md:grid-cols-2 lg:grid-cols-4">
         {results.map((item, index) => {
           const title = item?.featureTitle.jsonValue;
           const description = item?.featureDescription.jsonValue;
           return (
             <div
-              className="group bg-te-teal hover:bg-te-teal-hover cursor-pointer rounded-lg p-6 text-white transition-colors"
+              className="group hover:border-border hover:shadow-soft cursor-pointer rounded-2xl border border-transparent p-8 transition-all duration-400"
               key={index}
             >
-              {/* Generated Number */}
-              <h1 className="mb-2 text-7xl leading-24 text-white/70 group-hover:text-white">
+              <h1 className="font-display text-foreground/10 group-hover:text-foreground/30 mb-2 text-7xl leading-none transition-colors duration-400">
                 {generateIndexes(index)}
               </h1>
-              {/* Title and Description */}
               <div>
-                <div className="mb-4 text-xl leading-8 font-bold text-white">
+                <div className="font-heading text-foreground mb-3 text-xl font-semibold">
                   <Text field={title} />
                 </div>
-                <div className="leading-7 text-white/90">
+                <div className="text-foreground-muted leading-relaxed">
                   <Text field={description} />
                 </div>
               </div>
@@ -183,28 +171,25 @@ export const NumberedGrid = (props: FeaturesProps) => {
 };
 
 export const FourColGrid = (props: FeaturesProps) => {
-  // results of the graphql
   const results = props.fields.data.datasource.children.results;
 
   return (
     <FeatureWrapper props={props}>
-      <div className="container grid grid-cols-1 gap-20 py-24 md:grid-cols-2 lg:grid-cols-4 lg:gap-10">
+      <div className="container grid grid-cols-1 gap-16 py-24 md:grid-cols-2 lg:grid-cols-4 lg:gap-10">
         {results.map((item, index) => {
           const title = item.featureTitle.jsonValue;
           const description = item.featureDescription.jsonValue;
           const image = item.featureImage.jsonValue;
           return (
-            <div className="grid grid-cols-[1fr_2fr] gap-2.5" key={index}>
-              {/* Image */}
-              <div className="flex items-center justify-center rounded-full">
-                <Image field={image} />
+            <div className="grid grid-cols-[1fr_2fr] gap-3" key={index}>
+              <div className="flex items-center justify-center">
+                <Image field={image} className="opacity-70" />
               </div>
-              {/* Title and Description */}
               <div className="flex flex-col justify-center">
-                <div className="text-xl leading-9 font-bold">
+                <div className="font-heading text-lg font-semibold">
                   <Text className="text-foreground" field={title} />
                 </div>
-                <div className="text-background-muted-light leading-8">
+                <div className="text-foreground-muted leading-relaxed">
                   <Text field={description} />
                 </div>
               </div>
@@ -221,22 +206,23 @@ export const ImageCardGrid = (props: FeaturesProps) => {
 
   return (
     <FeatureWrapper props={props}>
-      <div className="outline-non container grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+      <div className="container grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
         {results.map((item, index) => {
           const title = item.featureTitle.jsonValue;
           const description = item.featureDescription.jsonValue;
           const image = item.featureImage.jsonValue;
           return (
-            <div key={index}>
-              <div className="mb-7 aspect-4/3 w-full overflow-hidden rounded-lg bg-white">
-                <Image field={image} className="h-full w-full object-cover" />
+            <div key={index} className="group">
+              <div className="bg-background-accent mb-6 aspect-4/3 w-full overflow-hidden rounded-2xl">
+                <Image
+                  field={image}
+                  className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+                />
               </div>
-
-              <h6>
+              <h6 className="font-heading">
                 <Text field={title} />
               </h6>
-
-              <p className="text-foreground-muted mt-1 text-lg">
+              <p className="text-foreground-muted mt-1">
                 <Text field={description} />
               </p>
             </div>

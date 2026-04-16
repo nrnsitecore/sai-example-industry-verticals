@@ -20,10 +20,10 @@ export const ProductColorControl = ({
           aria-label="Select Color"
           key={color.id}
           onClick={() => onSelect(color)}
-          className={`size-8 rounded-full border-2 transition-all ${
+          className={`size-9 rounded-full border-2 transition-all duration-400 ${
             selectedColor?.id === color.id
-              ? 'ring-accent ring-2 ring-offset-2'
-              : 'border-muted hover:ring-accent/50'
+              ? 'ring-foreground ring-2 ring-offset-2'
+              : 'border-border hover:ring-foreground/30 hover:ring-2'
           }`}
           title={color.fields?.Name?.value}
           style={{ backgroundColor: color.fields?.HexCode?.value }}

@@ -17,7 +17,7 @@ export const Pagination = ({
   currentPage,
   setCurrentPage,
   windowSize = 3,
-  paginationButtonClasses = 'px-3 py-2 md:px-4 md:py-3 rounded-md',
+  paginationButtonClasses = 'px-4 py-2.5 rounded-full text-sm font-medium transition-all duration-400',
 }: PaginationProps) => {
   const { totalPages, startPage, endPage, visiblePages } = usePagination({
     totalItems,
@@ -34,16 +34,18 @@ export const Pagination = ({
   };
 
   return (
-    <div className="mt-12 flex items-center justify-center space-x-2 text-sm md:space-x-4">
+    <div className="mt-16 flex items-center justify-center space-x-2 text-sm md:space-x-3">
       {currentPage > 1 && (
         <button
           onClick={() => handlePageChange(currentPage - 1)}
-          className={`${paginationButtonClasses} bg-background-accent`}
+          className={`${paginationButtonClasses} border-border hover:bg-foreground border hover:text-white`}
         >
           <span className="md:hidden">
             <ChevronLeft size={16} />
           </span>
-          <span className="hidden md:block">{t('pagination_prev_btn_text') || 'Prev'}</span>
+          <span className="hidden tracking-[0.1em] uppercase md:block">
+            {t('pagination_prev_btn_text') || 'Prev'}
+          </span>
         </button>
       )}
 
@@ -52,12 +54,14 @@ export const Pagination = ({
           <button
             onClick={() => handlePageChange(1)}
             className={`${paginationButtonClasses} ${
-              currentPage === 1 ? 'bg-accent text-background' : 'bg-background-accent'
+              currentPage === 1
+                ? 'bg-foreground text-white'
+                : 'border-border hover:bg-foreground border hover:text-white'
             }`}
           >
             1
           </button>
-          <span className="md:px-2">...</span>
+          <span className="text-foreground-muted px-1">...</span>
         </>
       )}
 
@@ -66,7 +70,9 @@ export const Pagination = ({
           key={page}
           onClick={() => handlePageChange(page)}
           className={`${paginationButtonClasses} ${
-            page === currentPage ? 'bg-accent text-background' : 'bg-background-accent'
+            page === currentPage
+              ? 'bg-foreground text-white'
+              : 'border-border hover:bg-foreground border hover:text-white'
           }`}
         >
           {page}
@@ -75,11 +81,13 @@ export const Pagination = ({
 
       {endPage < totalPages && (
         <>
-          <span className="md:px-2">...</span>
+          <span className="text-foreground-muted px-1">...</span>
           <button
             onClick={() => handlePageChange(totalPages)}
             className={`${paginationButtonClasses} ${
-              currentPage === totalPages ? 'bg-accent text-background' : 'bg-background-accent'
+              currentPage === totalPages
+                ? 'bg-foreground text-white'
+                : 'border-border hover:bg-foreground border hover:text-white'
             }`}
           >
             {totalPages}
@@ -90,12 +98,14 @@ export const Pagination = ({
       {currentPage < totalPages && (
         <button
           onClick={() => handlePageChange(currentPage + 1)}
-          className={`${paginationButtonClasses} bg-background-accent`}
+          className={`${paginationButtonClasses} border-border hover:bg-foreground border hover:text-white`}
         >
           <span className="md:hidden">
             <ChevronRight size={16} />
           </span>
-          <span className="hidden md:block">{t('pagination_next_btn_text') || 'Next'}</span>
+          <span className="hidden tracking-[0.1em] uppercase md:block">
+            {t('pagination_next_btn_text') || 'Next'}
+          </span>
         </button>
       )}
     </div>

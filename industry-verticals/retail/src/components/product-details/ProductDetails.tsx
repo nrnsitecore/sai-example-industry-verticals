@@ -64,7 +64,7 @@ export const Default = (props: ProductDetailsProps) => {
           <ProductGallery product={product} key={productId} />
 
           {/* Right product info */}
-          <div className="max-w-xl space-y-4 pb-4 lg:px-10">
+          <div className="max-w-xl space-y-5 pb-4 lg:px-12">
             <ProductDescription product={product} />
 
             <div className="flex flex-wrap justify-between gap-4 py-5">

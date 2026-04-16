@@ -47,8 +47,10 @@ const SearchPagination = ({ currentPage, totalPages }: SearchPaginationProps) =>
                 aria-label={`Page ${page}`}
                 page={page as number}
                 onClick={(e) => e.preventDefault()}
-                className={`mx-1 rounded-md px-3 py-2 md:px-4 md:py-3 ${
-                  page === currentPage ? 'bg-accent text-background' : 'bg-background-accent'
+                className={`mx-1 rounded-full px-3 py-2 transition-all duration-400 md:px-4 md:py-3 ${
+                  page === currentPage
+                    ? 'bg-foreground text-white'
+                    : 'border-border hover:bg-foreground border hover:text-white'
                 }`}
               >
                 {page}

@@ -1,39 +1,3 @@
-/* TE Connectivity: primary nav bar (full-width dark blue-gray, white text) */
-.te-nav-bar .component.navigation {
-  @apply bg-transparent text-white;
-}
-
-.te-nav-bar .component.navigation nav {
-  @apply max-lg:bg-te-nav bg-transparent text-white lg:bg-transparent;
-}
-
-.te-nav-bar .component.navigation a,
-.te-nav-bar .component.navigation .navigation-dropdown-trigger {
-  @apply text-white hover:opacity-90;
-}
-
-.te-nav-bar .component.navigation ul[role='menu'] {
-  @apply text-white;
-}
-
-/* Hide logo in nav bar (logo is in header-left); always hide in bar */
-.te-nav-bar .component.navigation ul[role='menubar'] > li.shrink-0 {
-  @apply !hidden;
-}
-
-.te-nav-bar .component.navigation .lg\:flex-row {
-  @apply justify-start gap-6 xl:gap-8;
-}
-
-/* Responsive: nav bar and mobile menu spacing */
-.te-nav-bar .component.navigation > div:first-child {
-  @apply px-4 py-3 sm:py-4;
-}
-
-.te-nav-bar .component.navigation nav ul {
-  @apply px-4 py-4 sm:py-6;
-}
-
 /* Background layout */
 .cover-background {
   > .component-content {
@@ -47,16 +11,11 @@
   }
 }
 
-/* This doesn't really do what it says - we may need to rework it */
 .parallax-background {
   > .component-content {
     @apply bg-cover bg-fixed bg-position-[50%_0] bg-no-repeat max-md:bg-scroll;
   }
 }
-
-/* Background color  */
-/* &:not(.container) - full width container and other full width components - color from edge to edge */
-/* &.container > .component-content - centered container - color only the content to align with grid */
 
 .container-clean-background {
   &:not(.container),
@@ -78,23 +37,27 @@
 
 .container-dark-background {
   > .component-content {
-    @apply border-accent;
+    @apply border-foreground;
   }
 
   &:not(.container),
   &.container > .component-content {
-    @apply bg-accent border-accent text-background;
+    @apply bg-foreground border-foreground text-white;
 
     * {
       @apply text-inherit;
     }
 
     .arrow-btn {
-      @apply border-b-background;
+      @apply border-b-white text-white;
 
       &::after {
-        @apply bg-background;
+        @apply bg-white;
       }
+    }
+
+    .pill-btn {
+      @apply text-foreground bg-white hover:bg-white/90;
     }
   }
 }
@@ -111,17 +74,16 @@
 }
 
 /* Spacing */
-/* Using padding for the sides so it doesn't break the grid widths */
 .indent {
   @apply px-12;
 }
 
 .indent-top {
-  @apply mt-6;
+  @apply mt-8;
 }
 
 .indent-bottom {
-  @apply mb-6;
+  @apply mb-8;
 }
 
 /* Content alignment */
@@ -153,11 +115,14 @@
 }
 
 .container-dark-background .shim {
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.3);
   padding: 50px;
+  border-radius: 1rem;
 }
 
 .shim {
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.5);
   padding: 50px;
+  border-radius: 1rem;
+  backdrop-filter: blur(8px);
 }

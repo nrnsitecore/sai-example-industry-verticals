@@ -32,7 +32,7 @@ export const ProductDescription = ({ product }: ProductDescriptionProps) => {
       {!!product?.Reviews?.length && (
         <div className="flex items-center space-x-3">
           <span className="text-foreground text-lg">{averageRating}</span>
-          <StarRating rating={averageRating} className="!text-accent" />
+          <StarRating rating={averageRating} className="!text-foreground" />
           <div className="bg-foreground-muted h-7 w-px" />
           <span className="text-foreground-muted text-sm">
             {reviewCount} Customer Review{reviewCount !== 1 ? 's' : ''}

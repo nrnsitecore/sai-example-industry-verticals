@@ -42,6 +42,17 @@ const nextConfig = {
         hostname: 'starter-verticals-2.sitecoresandbox.cloud',
         port: '',
       },
+      // Matches nrndemos.sitecoresandbox.cloud, nrndemos-*.sitecoresandbox.cloud, etc. (same wildcard style as edge/xmc)
+      {
+        protocol: 'https',
+        hostname: 'nrndemos*.**',
+        port: '',
+      },
+      {
+        protocol: 'https',
+        hostname: '**.nrndemos.sitecoresandbox.cloud',
+        port: '',
+      },
       {
         protocol: 'https',
         hostname: 'placehold.co',
